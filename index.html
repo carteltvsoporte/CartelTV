@@ -5,31 +5,32 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cartel TV</title>
   <meta name="description" content="Descubre películas en estreno, series en emisión, próximos estrenos, populares y más con Cartel TV, una plataforma gratuita, rápida y actualizada. Sin registro, sin permisos invasivos." />
-  <link rel="canonical" href="https://koowexa.github.io/TV-/" />
+  <link rel="canonical" href="https://carteltvsoporte.github.io/CartelTV/" />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Cartel TV" />
   <meta property="og:description" content="Descubre películas en estreno, series en emisión, próximos estrenos, populares y más con Cartel TV, una plataforma gratuita, rápida y actualizada." />
-  <meta property="og:image" content="https://github.com/KOOWEXA/TV-/raw/refs/heads/main/TV.png" />
-  <meta property="og:url" content="https://koowexa.github.io/TV-/" />
+  <meta property="og:image" content="https://github.com/carteltvsoporte/CartelTV/raw/refs/heads/main/TV.jpg" />
+  <meta property="og:url" content="https://carteltvsoporte.github.io/CartelTV/" />
   <meta property="og:locale" content="es_ES" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Cartel TV" />
   <meta name="twitter:description" content="Descubre películas en estreno, series en emisión, próximos estrenos, populares y más con Cartel TV, una plataforma gratuita, rápida y actualizada." />
-  <meta name="twitter:image" content="https://github.com/KOOWEXA/TV-/raw/refs/heads/main/TV.png" />
-  <link rel="icon" href="https://github.com/KOOWEXA/TV-/raw/refs/heads/main/TV.png" type="image/png" />
+  <meta name="twitter:image" content="https://github.com/carteltvsoporte/CartelTV/raw/refs/heads/main/TV.jpg" />
+  <link rel="icon" href="https://github.com/carteltvsoporte/CartelTV/raw/refs/heads/main/TV.jpg" type="image/jpg" />
   <style>
     :root {
-      --primary: #d4af37; /* Dorado cinematográfico */
-      --bg: #0f0f15;
-      --card-bg: #1a1a25;
+      --primary: #d4af37;
+      --bg: #0a0a10;
+      --card-bg: #14141f;
       --text: #f8f9fa;
       --text-secondary: #adb5bd;
       --text-muted: #6c757d;
-      --radius: 16px;
+      --radius: 18px;
       --success: #4ade80;
-      --border: #343a40;
-      --promo: #ff6b35;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      --border: #2d2d3a;
+      --shadow: 0 12px 40px rgba(0, 0, 0, 0.7);
+      --glow: 0 0 12px rgba(212, 175, 55, 0.4);
+      --metallic: linear-gradient(135deg, #d4af37, #b8860b, #8b6f2a, #d4af37);
     }
 
     * {
@@ -40,108 +41,116 @@
 
     body {
       font-family: 'Segoe UI', system-ui, sans-serif;
-      background: var(--bg);
+      background: radial-gradient(circle at 30% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+                  radial-gradient(circle at 80% 80%, rgba(50, 30, 10, 0.15) 0%, transparent 50%),
+                  linear-gradient(135deg, #1a1a25, #252535);
       color: var(--text);
-      padding: 20px;
+      padding: 24px;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      background: linear-gradient(135deg, #0c0c12 0%, #1a1a25 100%);
+      overflow-x: hidden;
     }
 
     .container {
       width: 100%;
-      max-width: 520px;
-    }
-
-    /* Main App */
-    #main-app {
-      width: 100%;
+      max-width: 560px;
     }
 
     .top-bar {
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
+      gap: 14px;
+      margin-bottom: 24px;
       justify-content: center;
     }
 
     .logo-small {
-      width: 32px;
-      height: 32px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      box-shadow: var(--glow), 0 4px 12px rgba(0,0,0,0.5);
+      animation: pulseGlow 3s infinite alternate;
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
 
-    .follow-btn {
-      background: rgba(212, 175, 55, 0.15);
-      color: var(--primary);
-      text-decoration: none;
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 0.88em;
-      font-weight: 600;
-      border: 1px solid rgba(212, 175, 55, 0.3);
-      backdrop-filter: blur(4px);
+    .logo-small:hover {
+      transform: scale(1.1);
     }
 
-    .follow-btn:hover,
-    .follow-btn:focus {
-      background: rgba(212, 175, 55, 0.25);
-      outline: 2px solid var(--primary);
-      outline-offset: 2px;
+    @keyframes pulseGlow {
+      0% { box-shadow: var(--glow), 0 4px 12px rgba(0,0,0,0.5); }
+      100% { box-shadow: 0 0 20px rgba(212, 175, 55, 0.6), 0 4px 12px rgba(0,0,0,0.5); }
     }
 
     h1 {
-      font-size: 2em;
-      margin-bottom: 20px;
+      font-size: 2.2em;
+      margin-bottom: 24px;
       text-align: center;
-      font-weight: 800;
-      background: linear-gradient(to right, #d4af37, #f8f9fa);
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+      background: linear-gradient(to right, #ffffff, #d4af37);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      letter-spacing: -0.5px;
+      position: relative;
+    }
+
+    h1::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 2px;
     }
 
     .filters {
       display: flex;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       flex-wrap: wrap;
       justify-content: center;
     }
 
     .filter-btn {
       padding: 10px 18px;
-      font-size: 0.92em;
-      background: rgba(255, 255, 255, 0.06);
+      font-size: 0.94em;
+      background: rgba(30, 30, 40, 0.6);
       color: var(--text-secondary);
       border: 1px solid var(--border);
-      border-radius: 30px;
+      border-radius: 32px;
       cursor: pointer;
       white-space: nowrap;
-      transition: all 0.25s ease;
+      transition: all 0.3s ease;
+      font-weight: 600;
     }
 
     .filter-btn:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.12);
+      color: #f8f9fa;
+      border-color: #d4af3766;
     }
 
     .filter-btn.active {
-      background: var(--primary);
-      color: #0f0f15;
-      border-color: var(--primary);
-      font-weight: 600;
-      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+      background: var(--metallic);
+      color: #0a0a10;
+      border: none;
+      font-weight: 800;
+      box-shadow: var(--glow), var(--shadow);
+      transform: translateY(-2px);
     }
 
     .status-bar {
-      font-size: 0.88em;
+      font-size: 0.9em;
       color: var(--text-muted);
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       font-weight: 500;
     }
 
@@ -152,25 +161,26 @@
 
     .action-btn {
       width: 100%;
-      padding: 14px;
-      font-size: 1.15em;
-      font-weight: 700;
-      background: var(--primary);
-      color: #0f0f15;
+      padding: 16px;
+      font-size: 1.2em;
+      font-weight: 800;
+      background: var(--metallic);
+      color: #0a0a10;
       border: none;
       border-radius: var(--radius);
       cursor: pointer;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       box-shadow: var(--shadow);
-      transition: all 0.2s ease;
+      transition: all 0.25s ease;
+      letter-spacing: 0.5px;
     }
 
     .action-btn:hover,
     .action-btn:focus {
-      background: #e0b94a;
-      transform: translateY(-2px);
-      outline: 2px solid #fff;
-      outline-offset: 2px;
+      background: linear-gradient(135deg, #e0b94a, #c9a030, #a88525, #e0b94a);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 50px rgba(212, 175, 55, 0.5);
+      outline: none;
     }
 
     .action-btn:disabled {
@@ -182,21 +192,22 @@
     .loading {
       text-align: center;
       color: var(--text-secondary);
-      margin: 24px 0;
+      margin: 28px 0;
       display: none;
       font-style: italic;
     }
 
     .movie-card {
       background: var(--card-bg);
-      padding: 20px;
+      padding: 24px;
       border-radius: var(--radius);
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
       opacity: 0;
-      transform: translateY(10px);
-      transition: opacity 0.4s, transform 0.4s, box-shadow 0.3s;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      transform: translateY(15px);
+      transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.4s ease;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(212, 175, 55, 0.12);
     }
 
     .movie-card.visible {
@@ -206,109 +217,96 @@
 
     .movie-poster {
       width: 100%;
-      max-width: 320px;
+      max-width: 340px;
       aspect-ratio: 2 / 3;
       object-fit: cover;
       border-radius: var(--radius);
-      background: #222;
-      margin: 0 auto 16px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.5);
+      background: #1a1a25;
+      margin: 0 auto 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .movie-card:hover .movie-poster {
+      transform: scale(1.02);
     }
 
     .movie-title {
-      font-size: 1.4em;
-      margin: 12px 0;
-      font-weight: 700;
+      font-size: 1.45em;
+      margin: 14px 0;
+      font-weight: 800;
       color: #f8f9fa;
     }
 
     .movie-overview {
-      font-size: 0.98em;
-      line-height: 1.6;
+      font-size: 1em;
+      line-height: 1.65;
       color: var(--text-secondary);
     }
 
     .error {
       color: #ff6b6b;
       background: rgba(255, 107, 107, 0.1);
-      padding: 14px;
+      padding: 16px;
       border-radius: var(--radius);
-      margin: 20px 0;
-      font-weight: 500;
+      margin: 24px 0;
+      font-weight: 600;
     }
 
-    /* Botón de descarga */
     .download-btn {
       display: flex;
       justify-content: center;
-      margin-top: 16px;
+      margin-top: 20px;
       width: 100%;
     }
 
     .download-btn a {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      background: rgba(255, 255, 255, 0.08);
+      gap: 12px;
+      background: linear-gradient(135deg, #1e1e2d, #2a2a3a);
       color: var(--text);
       text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 30px;
-      font-size: 0.95em;
-      font-weight: 600;
-      transition: background 0.3s, transform 0.2s;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 14px 24px;
+      border-radius: 36px;
+      font-size: 1em;
+      font-weight: 700;
+      transition: all 0.3s ease;
+      border: 1px solid var(--border);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
     }
 
     .download-btn a:hover,
     .download-btn a:focus {
-      background: rgba(255, 255, 255, 0.15);
-      transform: scale(1.03);
-      outline: 2px solid white;
-      outline-offset: 2px;
+      background: linear-gradient(135deg, #2a2a3a, #353545);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      outline: none;
+      border-color: #d4af3766;
     }
 
     .download-btn svg {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
+      fill: var(--primary);
     }
 
-    /* Promo Banner */
-    #promo-banner {
-      position: fixed;
-      bottom: 24px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--promo);
-      color: white;
-      padding: 12px 24px;
-      border-radius: 30px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
-      font-weight: 700;
-      text-align: center;
-      z-index: 1000;
-      max-width: 90%;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-    }
-
-    #promo-banner.show {
-      opacity: 1;
-    }
-
-    #promo-banner a {
-      color: white;
-      text-decoration: underline;
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Main App (sin onboarding) -->
   <div class="container">
     <div id="main-app" role="main" aria-live="polite">
       <div class="top-bar" role="banner">
-        <img src="https://github.com/KOOWEXA/TV-/raw/refs/heads/main/TV.png" alt="Cartel TV" class="logo-small" loading="lazy" />
-        <a href="https://whatsapp.com/channel/0029Vb6sN8kL7UVSCeAQgA2f" target="_blank" rel="noopener noreferrer nofollow" class="follow-btn" aria-label="Seguir canal de Cartel TV en WhatsApp">Seguir</a>
+        <a href="https://whatsapp.com/channel/0029Vb6sN8kL7UVSCeAQgA2f" target="_blank" rel="noopener noreferrer nofollow" aria-label="Ir al canal de Cartel TV en WhatsApp">
+          <img src="https://github.com/carteltvsoporte/CartelTV/raw/refs/heads/main/TV.jpg" alt="Cartel TV" class="logo-small" loading="lazy" />
+        </a>
       </div>
 
       <h1>🎬 Cartel TV</h1>
@@ -331,29 +329,18 @@
 
       <div id="movie-container" class="movie-card" role="region" aria-label="Contenido recomendado"></div>
 
-      <!-- Botón de descarga -->
       <div class="download-btn">
-        <a href="https://github.com/KOOWEXA/TV-/raw/refs/heads/main/TV+.apk"
-           download="CartelTV.apk"
-           target="_blank"
-           rel="noopener noreferrer nofollow"
-           aria-label="Descargar la app Cartel TV para Android">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 16L8 12h3V8h2v4h3l-4 4zm-6 4h12v2H6v-2z"/>
+        <a href="https://carteltv.en.aptoide.com/" target="_blank" rel="noopener noreferrer nofollow" aria-label="Instalar Cartel TV desde Aptoide">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
           </svg>
-          Descargar app
+          Instalar desde Aptoide
         </a>
       </div>
     </div>
   </div>
 
-  <!-- Promo Banner -->
-  <div id="promo-banner" role="alert" aria-live="polite">
-    ¿Buscas algo más? ¡Descubre <a href="https://koowexa.github.io/kooprome/" target="_blank" rel="noopener noreferrer nofollow">ExoBazar</a>!
-  </div>
-
   <script>
-    // Configuración original (sin cambios funcionales)
     const CONFIG = {
       API_KEY: '487ec2ee423ac20f42f80d2ee5aebab8',
       BASE_URL: 'https://api.themoviedb.org/3',
@@ -389,17 +376,6 @@
 
     function formatTime(date) {
       return new Intl.DateTimeFormat('es-ES', { hour: '2-digit', minute: '2-digit' }).format(date);
-    }
-
-    function showPromoOnce() {
-      if (!sessionStorage.getItem('promoShown')) {
-        const promo = document.getElementById('promo-banner');
-        promo.classList.add('show');
-        setTimeout(() => {
-          promo.classList.remove('show');
-        }, 5000);
-        sessionStorage.setItem('promoShown', 'true');
-      }
     }
 
     async function fetchWithRetry(url, retries = CONFIG.MAX_RETRIES, delay = CONFIG.INITIAL_DELAY) {
@@ -509,7 +485,7 @@
       img.alt = item.title ? `Póster de ${item.title}` : `Póster de ${item.name}`;
       img.loading = 'lazy';
       img.onerror = () => {
-        img.src = 'https://via.placeholder.com/320x480?text=Sin+imagen';
+        img.src = 'https://via.placeholder.com/340x510/1a1a25/6c757d?text=Sin+imagen';
         img.alt = 'Imagen no disponible';
       };
 
@@ -597,10 +573,7 @@
       updateCountdown();
     }
 
-    // Inicialización inmediata (sin onboarding)
     function initApp() {
-      showPromoOnce();
-
       document.addEventListener('visibilitychange', () => {
         State.isPageVisible = !document.hidden;
         if (State.isPageVisible && State.lastUpdate) {
@@ -634,7 +607,6 @@
       window.addEventListener('beforeunload', cleanup);
     }
 
-    // Iniciar la app al cargar
     window.addEventListener('DOMContentLoaded', initApp);
   </script>
 </body>
